@@ -40,13 +40,13 @@ const Current = ({}) => {
         </div>
       </div>
       {/* City Name */}
-      <span className="text-3xl lg:text-4xl">City</span>
+      <span>City</span>
       {/* Weather Status */}
       <span className="text-center text-3xl lg:text-7xl font-bold">
         {Math.round(data?.data.main.temp)} <sup>o</sup>
       </span>
 
-      <div className="space-y-1">
+      <div className="">
         <Image
           alt="icon"
           src={`/icon/${data?.data.weather[0].icon}.png`}
@@ -54,7 +54,7 @@ const Current = ({}) => {
           height={24}
         />
         <div>{data?.data.weather[0].main}</div>
-        <div className="flex gap-2 dark:text-neutral-500">
+        <div className="flex gap-1 dark:text-neutral-500">
           <span>H: {Math.round(data?.data.main.temp_max)}&deg;</span>
           <span>L: {Math.round(data?.data.main.temp_min)}&deg;</span>
         </div>
