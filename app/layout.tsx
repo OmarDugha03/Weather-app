@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Navbar />
-          {children}
+          <main className="flex-grow">{children}</main>
         </Providers>
       </body>
     </html>
