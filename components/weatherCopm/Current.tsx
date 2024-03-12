@@ -23,7 +23,7 @@ const Current = ({}) => {
   const dayOfWeek = currentDate.getDay()
 
   return (
-    <section className="mt-5 flex flex-col  space-y-10">
+    <section className="mt-5 flex flex-col  lg:space-y-10">
       {/* Clock and Week Day */}
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-bold">{weekdays[dayOfWeek]}</h3>

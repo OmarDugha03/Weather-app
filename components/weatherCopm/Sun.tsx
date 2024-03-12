@@ -48,7 +48,7 @@ const Sun = ({}) => {
 
       <span className="">
         {" "}
-        {Math.round(data?.data.sys.sunset)}{" "}
+        {Math.round(data?.data.sys.sunset).toLocaleString()}{" "}
         {currentDate.getDate() > 12 ? "AM" : "PM"}
       </span>
       <div className="absolute top-36">

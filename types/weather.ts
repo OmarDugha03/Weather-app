@@ -1,16 +1,16 @@
-export type Coord = {
+export interface Coord {
   lon: number
   lat: number
 }
 
-export type Weather = {
+export interface Weather {
   id: number
   main: string
   description: string
   icon: string
 }
 
-export type Main = {
+export interface Main {
   temp: number
   feels_like: number
   temp_min: number
@@ -21,23 +21,23 @@ export type Main = {
   grnd_level: number
 }
 
-export type Wind = {
+export interface Wind {
   speed: number
   deg: number
   gust: number
 }
 
-export type Clouds = {
+export interface Clouds {
   all: number
 }
 
-export type Sys = {
+export interface Sys {
   country: string
   sunrise: number
   sunset: number
 }
 
-export type WeatherData = {
+export interface WeatherData {
   coord: Coord
   weather: Weather[]
   base: string
@@ -51,4 +51,36 @@ export type WeatherData = {
   id: number
   name: string
   cod: number
+}
+export interface ListItem {
+  dt: number
+  main: Main
+  weather: Weather[]
+  clouds: Clouds
+  wind: Wind
+  visibility: number
+  pop: number
+  sys: Sys
+  dt_txt: string
+}
+export interface City {
+  id: number
+  name: string
+  coord: {
+    lat: number
+    lon: number
+  }
+  country: string
+  population: number
+  timezone: number
+  sunrise: number
+  sunset: number
+}
+
+export interface FiveDayForecast {
+  cod: string
+  message: number
+  cnt: number
+  list: ListItem[]
+  city: City
 }

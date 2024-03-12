@@ -26,7 +26,7 @@ const Wind = ({}) => {
           <Image
             src="/icon/compass_arrow.svg"
             alt="compass"
-            className="absolute top-1 left-[47%] transition-all duration-500 ease-in-out dark:invert"
+            className="absolute top-0 left-[47%] transition-all duration-500 ease-in-out dark:invert"
             style={{
               transform: `rotate(${data?.data.wind.deg}deg) translateX(-50%)`,
               height: "100%",
