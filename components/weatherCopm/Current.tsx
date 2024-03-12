@@ -23,7 +23,7 @@ const Current = ({}) => {
   const dayOfWeek = currentDate.getDay()
 
   return (
-    <section className="flex flex-col  space-y-10">
+    <section className="mt-5 flex flex-col  space-y-10">
       {/* Clock and Week Day */}
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-bold">{weekdays[dayOfWeek]}</h3>
@@ -40,7 +40,7 @@ const Current = ({}) => {
         </div>
       </div>
       {/* City Name */}
-      <span>City</span>
+      <span>{data?.data.name}</span>
       {/* Weather Status */}
       <span className="text-center text-3xl lg:text-7xl font-bold">
         {Math.round(data?.data.main.temp)} <sup>o</sup>
