@@ -84,3 +84,25 @@ export interface FiveDayForecast {
   list: ListItem[]
   city: City
 }
+export interface DailyUnits {
+  time: string
+  uv_index_max: string
+  uv_index_clear_sky_max: string
+}
+
+export interface DailyData {
+  time: string[]
+  uv_index_max: number
+  uv_index_clear_sky_max: number
+}
+export interface LocationData {
+  latitude: number
+  longitude: number
+  generationtime_ms: number
+  utc_offset_seconds: number
+  timezone: string
+  timezone_abbreviation: string
+  elevation: number
+  daily_units: DailyUnits
+  daily: DailyData
+}
