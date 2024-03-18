@@ -3,12 +3,12 @@ import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import { FC } from "react"
 
-interface TenDayForecastProps {}
+interface FiveDayForecastProps {}
 
-const TenDayForecast: FC<TenDayForecastProps> = ({}) => {
-  const {} = useQuery({
-    queryKey: ["tenDay"],
-    queryFn: () => axios.get("api/weather/tenday"),
+const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
+  const { data } = useQuery({
+    queryKey: ["FiveDay"],
+    queryFn: () => axios.get("api/weather/fiveday"),
   })
   return (
     <div>
@@ -100,4 +100,4 @@ const TenDayForecast: FC<TenDayForecastProps> = ({}) => {
   )
 }
 
-export default TenDayForecast
+export default FiveDayForecast

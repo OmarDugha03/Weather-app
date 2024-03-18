@@ -14,6 +14,7 @@ interface LayoutProps {
   Humidity: ReactNode
   Pressure: ReactNode
   Visibility: ReactNode
+  Others: ReactNode
 }
 const Layout = ({
   airpup,
@@ -27,6 +28,7 @@ const Layout = ({
   Humidity,
   Pressure,
   Visibility,
+  Others,
 }: LayoutProps) => {
   const Current = dynamic(() => import("../weatherCopm/Current"), {
     ssr: false,
@@ -52,7 +54,7 @@ const Layout = ({
       <Card className=" p-4">{Pressure}</Card>
 
       <Card className="lg:col-span-3 lg:row-span-2 p-4">{}</Card>
-      <Card className="lg:row-span-2 p-4">{}</Card>
+      <Card className="lg:row-span-2 p-4">{Others}</Card>
     </div>
   )
 }

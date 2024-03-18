@@ -7,10 +7,11 @@ import {
   Layout,
   Precipitation,
   Pressure,
-  TenDayForecast,
+  FiveDayForecast,
   Ux,
   Visibility,
   Wind,
+  Others,
 } from "@/components/weatherCopm"
 import Sun from "@/components/weatherCopm/Sun"
 
@@ -27,11 +28,12 @@ export default function Home() {
         HourForecast={<HourForecast />}
         Ux={<Ux />}
         Precipitation={<Precipitation />}
-        TenDayForecast={<TenDayForecast />}
+        TenDayForecast={<FiveDayForecast />}
         FeelsLike={<Feelslike />}
         Humidity={<Humidity />}
         Pressure={<Pressure />}
         Visibility={<Visibility />}
+        Others={<Others />}
       />
     </>
   )

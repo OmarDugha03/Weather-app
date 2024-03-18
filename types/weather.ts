@@ -144,11 +144,42 @@ export interface Precipitation {
   }
 }
 
-/* {
-"country": "IT",
-"population": 4593,
-"timezone": 3600,
-"sunrise": 1710739348,
-"sunset": 1710782735
+type Temperature = {
+  day: number
+  min: number
+  max: number
+  night: number
+  eve: number
+  morn: number
 }
-} */
+
+type FeelsLike = {
+  day: number
+  night: number
+  eve: number
+  morn: number
+}
+export interface ForecastData {
+  dt: number
+  sunrise: number
+  sunset: number
+  temp: Temperature
+  feels_like: FeelsLike
+  pressure: number
+  humidity: number
+  weather: Weather[]
+  speed: number
+  deg: number
+  gust: number
+  clouds: number
+  pop: number
+  rain?: number
+}
+
+export interface TenDayForecastData {
+  city: City
+  cod: string
+  message: number
+  cnt: number
+  list: ForecastData[]
+}

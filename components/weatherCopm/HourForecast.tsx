@@ -14,7 +14,7 @@ import { kelTOCel } from "@/lib/kelTOCel"
 
 const HourForecast = ({}) => {
   const { data } = useQuery({
-    queryKey: ["hours"],
+    queryKey: ["fiveday"],
     queryFn: () => axios.get<FiveDayForecast>("api/weather/fiveday"),
   })
   const today = new Date()
