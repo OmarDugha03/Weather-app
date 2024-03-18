@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Providers from "@/components/Providers"
-import { ThemeChanger } from "@/components/ui/themechanger"
 import Navbar from "@/components/Navbar"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -22,7 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow bg-white dark:bg-slate-950/20">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

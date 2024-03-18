@@ -12,7 +12,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
       <Image
         src={logo}
         alt="logo"
-        className="w-48 bg-black dark:bg-transparent p-2 rounded-md"
+        className="w-48  dark:bg-transparent p-2 rounded-md"
       />
       <ThemeChanger />
     </nav>
