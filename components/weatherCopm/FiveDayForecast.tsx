@@ -1,18 +1,25 @@
 "use client"
+import { FiveDayForecast } from "@/types/weather"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
+import Image from "next/image"
 import { FC } from "react"
+import { v4 as uuidv4 } from "uuid"
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel"
+import { formattedDay } from "@/lib/DateUtils"
+import { kelTOCel } from "@/lib/kelTOCel"
 
 interface FiveDayForecastProps {}
 
 const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
   const { data } = useQuery({
-    queryKey: ["FiveDay"],
-    queryFn: () => axios.get("api/weather/fiveday"),
+    queryKey: ["fiveday"],
+    queryFn: () => axios.get<FiveDayForecast>("api/weather/fiveday"),
   })
+
   return (
-    <div>
-      <p className="flex items-center gap-x-4 mt-4">
+    <>
+      <p className="flex items-center  text-center w-full mt-4">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -93,10 +100,39 @@ const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
             strokeLinejoin="round"
           />
         </svg>
-        <span>10-Day Forecast</span>
+        <span className="text-[13px] ms-2">
+          5-Day Forecast for {data?.data.city.name}
+        </span>
       </p>
-      <div></div>
-    </div>
+      <div className="h-[570px]  overflow-y-hidden overscroll-y-auto">
+        <div>
+          <Carousel orientation="vertical">
+            <CarouselContent className="mt-10 flex flex- lg:mt-14">
+              {data?.data.list.map((i) => (
+                <CarouselItem
+                  className="lg:basis-[100px]   basis-[140px]"
+                  key={uuidv4()}>
+                  <div key={i.dt} className="flex ">
+                    <div>{i.main.temp}</div>
+                    <Image
+                      src={`/icon/${i.weather[0].icon}.png`}
+                      alt={i.weather[0].description}
+                      width={44}
+                      height={44}
+                    />
+                    <div className="flex-1 flex items-center justify-between gap-4">
+                      <p className="font-bold">{i.main.temp_min}°C</p>
+                      <div className="temperature flex-1 w-full h-2 rounded-lg"></div>
+                      <p className="font-bold">{i.main.temp_max}°C</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+      </div>
+    </>
   )
 }
 

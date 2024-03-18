@@ -9,7 +9,7 @@ interface LayoutProps {
   HourForecast: ReactNode
   Ux: ReactNode
   Precipitation: ReactNode
-  TenDayForecast: ReactNode
+  FiveDayForecast: ReactNode
   FeelsLike: ReactNode
   Humidity: ReactNode
   Pressure: ReactNode
@@ -23,7 +23,7 @@ const Layout = ({
   HourForecast,
   Ux,
   Precipitation,
-  TenDayForecast,
+  FiveDayForecast,
   FeelsLike,
   Humidity,
   Pressure,
@@ -47,7 +47,7 @@ const Layout = ({
       <Card className=" p-4">{Ux}</Card>
       <Card className=" p-4">{Precipitation}</Card>
       {/* The Second Section */}
-      <Card className="lg:row-span-3 p-4">{TenDayForecast}</Card>
+      <Card className="lg:row-span-3  p-4">{FiveDayForecast}</Card>
       <Card className=" p-4">{FeelsLike}</Card>
       <Card className=" p-4">{Humidity}</Card>
       <Card className=" p-4">{Visibility}</Card>

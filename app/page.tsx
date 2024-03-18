@@ -28,7 +28,7 @@ export default function Home() {
         HourForecast={<HourForecast />}
         Ux={<Ux />}
         Precipitation={<Precipitation />}
-        TenDayForecast={<FiveDayForecast />}
+        FiveDayForecast={<FiveDayForecast />}
         FeelsLike={<Feelslike />}
         Humidity={<Humidity />}
         Pressure={<Pressure />}

@@ -1,14 +1,20 @@
 "use client"
 
+import { formattedDay, formattedTime } from "@/lib/DateUtils"
+import { kelTOCel } from "@/lib/kelTOCel"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 
 const Sun = ({}) => {
-  const currentDate = new Date()
   const { data } = useQuery({
     queryKey: ["weather"],
     queryFn: () => axios.get("/api/weather"),
   })
+
+  /*   for (let i = 0; i < 40; i += 8) {
+    const dailyData = list.slice(i, i + 5)
+    dailyForecasts.push(processData(dailyData))
+  } */
   return (
     <section className=" pt-2 pl-2  p-6 relative">
       <div className="flex items-center mb-3  gap-x-3 ">
@@ -46,14 +52,10 @@ const Sun = ({}) => {
         Sunset
       </div>
 
-      <span className="">
-        {" "}
-        {Math.round(data?.data.sys.sunset).toLocaleString()}{" "}
-        {currentDate.getDate() > 12 ? "AM" : "PM"}
-      </span>
+      <span className=""> {formattedTime(data?.data.sys.sunset)}</span>
       <div className="absolute top-36">
         Sunrise:
-        {Math.round(data?.data.sys.sunrise)} AM
+        <span className=""> {formattedTime(data?.data.sys.sunrise)}</span>
       </div>
     </section>
   )

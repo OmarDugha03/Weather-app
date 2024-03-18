@@ -17,8 +17,6 @@ const HourForecast = ({}) => {
     queryKey: ["fiveday"],
     queryFn: () => axios.get<FiveDayForecast>("api/weather/fiveday"),
   })
-  const today = new Date()
-  const stringForToDay = today.toISOString().split("T")[0]
   return (
     <Carousel className="w-full cursor-grabbing ">
       <CarouselContent className="mt-10 lg:mt-14">

@@ -176,7 +176,7 @@ export interface ForecastData {
   rain?: number
 }
 
-export interface TenDayForecastData {
+export interface FiveDayForecastData {
   city: City
   cod: string
   message: number
