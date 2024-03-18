@@ -106,3 +106,49 @@ export interface LocationData {
   daily_units: DailyUnits
   daily: DailyData
 }
+
+interface Rain {
+  "3h"?: number
+  "1h"?: number
+}
+interface ForecastItem {
+  dt: number
+  main: Main
+  weather: Weather[]
+  clouds: Clouds
+  wind?: Wind
+  visibility?: number
+  pop?: number
+  rain?: Rain
+  sys: Sys
+  dt_txt: string
+}
+
+export interface Precipitation {
+  cod: string
+  message: number
+  cnt: number
+  list: ForecastItem[]
+  city: {
+    id: number
+    name: string
+    coord: {
+      lat: string
+      lon: string
+    }
+    country: string
+    population: number
+    timezone: number
+    sunrise: number
+    sunset: number
+  }
+}
+
+/* {
+"country": "IT",
+"population": 4593,
+"timezone": 3600,
+"sunrise": 1710739348,
+"sunset": 1710782735
+}
+} */
