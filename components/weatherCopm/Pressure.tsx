@@ -21,12 +21,12 @@ const Pressure: FC<PressureProps> = ({}) => {
       {data?.data.list[0].main.pressure}hPa
       <p>
         {
-          // @ts-ignore: Object is possibly 'null'.
+          // @ts-ignore: Object is possibly 'undefined'.
           data?.data.list[0].main.pressure < 1000
             ? "Low pressure. Expect changes in the weather."
-            : // @ts-ignore: Object is possibly 'null'.
+            : // @ts-ignore: Object is possibly 'undefined'.
             data?.data.list[0].main.pressure >= 1000 &&
-              // @ts-ignore: Object is possibly 'null'.
+              // @ts-ignore: Object is possibly 'undefined'.
               data?.data.list[0].main.pressure <= 1010
             ? "Normal pressure. Typical weather conditions."
             : "High pressure. Expect stable and clear weather."
