@@ -12,6 +12,7 @@ import {
   Visibility,
   Wind,
   Others,
+  Current,
 } from "@/components/weatherCopm"
 import Sun from "@/components/weatherCopm/Sun"
 
@@ -22,6 +23,7 @@ export default async function Home() {
     <>
       <Search />
       <Layout
+        current={<Current />}
         airpup={<Air />}
         sunr={<Sun />}
         wind={<Wind />}

@@ -1,7 +1,7 @@
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
-  const lat = searchParams.get("lat") || 33.5132192
-  const lon = searchParams.get("lon") || 36.2768193
+  const lat = searchParams.get("lat")
+  const lon = searchParams.get("lon")
   try {
     const res = await fetch(
       `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${process.env.KEY_API}`

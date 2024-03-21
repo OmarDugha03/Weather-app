@@ -8,13 +8,18 @@ import { v4 as uuidv4 } from "uuid"
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel"
 import { formattedDay } from "@/lib/DateUtils"
 import { kelTOCel } from "@/lib/kelTOCel"
+import { useSearchParams } from "next/navigation"
 
 interface FiveDayForecastProps {}
 
 const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
+  const searchParams = useSearchParams()
+  const lat = searchParams.get("lat") || 33.5132192
+  const lon = searchParams.get("lon") || 36.2768193
   const { data } = useQuery({
     queryKey: ["fiveday"],
-    queryFn: () => axios.get<FiveDayForecast>("api/weather/fiveday"),
+    queryFn: () =>
+      axios.get<FiveDayForecast>(`api/weather/fiveday?lat=${lat}&lon=${lon}`),
   })
 
   for (let i = 0; i < 40; i += 8) {
