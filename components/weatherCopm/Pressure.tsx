@@ -18,14 +18,19 @@ const Pressure: FC<PressureProps> = ({}) => {
   })
   return (
     <div>
-      {data?.data.list[0].main.pressure}hPa{" "}
+      {data?.data.list[0].main.pressure}hPa
       <p>
-        {data?.data.list[0].main.pressure < 1000
-          ? "Low pressure. Expect changes in the weather."
-          : data?.data.list[0].main.pressure >= 1000 &&
-            data?.data.list[0].main.pressure <= 1010
-          ? "Normal pressure. Typical weather conditions."
-          : "High pressure. Expect stable and clear weather."}
+        {
+          // @ts-ignore: Object is possibly 'null'.
+          data?.data.list[0].main.pressure < 1000
+            ? "Low pressure. Expect changes in the weather."
+            : // @ts-ignore: Object is possibly 'null'.
+            data?.data.list[0].main.pressure >= 1000 &&
+              // @ts-ignore: Object is possibly 'null'.
+              data?.data.list[0].main.pressure <= 1010
+            ? "Normal pressure. Typical weather conditions."
+            : "High pressure. Expect stable and clear weather."
+        }
       </p>
     </div>
   )

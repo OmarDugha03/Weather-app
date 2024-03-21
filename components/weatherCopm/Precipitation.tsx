@@ -23,7 +23,6 @@ const Precipitation = ({}) => {
         <SingleSkel />
       ) : (
         <>
-          {" "}
           <p className="flex items-center gap-x-3">
             <svg
               viewBox="0 0 24 24"
