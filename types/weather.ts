@@ -61,6 +61,7 @@ export interface ListItem {
   visibility: number
   pop: number
   sys: Sys
+  rain: Rain
   dt_txt: string
 }
 export interface City {
@@ -119,7 +120,7 @@ interface ForecastItem {
   wind?: Wind
   visibility?: number
   pop?: number
-  rain?: Rain
+  rain: Rain
   sys: Sys
   dt_txt: string
 }
@@ -173,7 +174,7 @@ export interface ForecastData {
   gust: number
   clouds: number
   pop: number
-  rain?: number
+  rain: number
 }
 
 export interface FiveDayForecastData {

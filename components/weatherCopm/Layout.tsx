@@ -54,7 +54,7 @@ const Layout = ({
       <Card className=" p-4">{Pressure}</Card>
 
       <Card className="lg:col-span-3 lg:row-span-2 p-4">{}</Card>
-      <Card className="lg:row-span-2 p-4">{Others}</Card>
+      <div className="lg:row-span-2 p-4">{Others}</div>
     </div>
   )
 }

@@ -17,9 +17,14 @@ const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
     queryFn: () => axios.get<FiveDayForecast>("api/weather/fiveday"),
   })
 
+  for (let i = 0; i < 40; i += 8) {
+    data?.data.list.map((item) => {
+      console.log(item.dt_txt.slice(i, i + 5))
+    })
+  }
   return (
     <>
-      <p className="flex items-center  text-center w-full mt-4">
+      <p className="flex items-start gap-2  text-center w-full mt-4">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -100,7 +105,7 @@ const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
             strokeLinejoin="round"
           />
         </svg>
-        <span className="text-[13px] ms-2">
+        <span className="text-[13px] text-left ms-2">
           5-Day Forecast for {data?.data.city.name}
         </span>
       </p>
@@ -112,20 +117,7 @@ const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
                 <CarouselItem
                   className="lg:basis-[100px]   basis-[140px]"
                   key={uuidv4()}>
-                  <div key={i.dt} className="flex ">
-                    <div>{i.main.temp}</div>
-                    <Image
-                      src={`/icon/${i.weather[0].icon}.png`}
-                      alt={i.weather[0].description}
-                      width={44}
-                      height={44}
-                    />
-                    <div className="flex-1 flex items-center justify-between gap-4">
-                      <p className="font-bold">{i.main.temp_min}°C</p>
-                      <div className="temperature flex-1 w-full h-2 rounded-lg"></div>
-                      <p className="font-bold">{i.main.temp_max}°C</p>
-                    </div>
-                  </div>
+                  {i.dt_txt}
                 </CarouselItem>
               ))}
             </CarouselContent>

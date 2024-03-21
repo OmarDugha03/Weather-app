@@ -1,9 +1,40 @@
-import { FC } from "react"
+import Search from "@/components/Search"
+import {
+  Air,
+  Feelslike,
+  HourForecast,
+  Humidity,
+  Layout,
+  Precipitation,
+  Pressure,
+  FiveDayForecast,
+  Ux,
+  Visibility,
+  Wind,
+  Others,
+} from "@/components/weatherCopm"
+import Sun from "@/components/weatherCopm/Sun"
 
-interface pageProps {}
+export const dynamic = "force-dynamic"
 
-const Page: FC<pageProps> = ({}) => {
-  return <div>page</div>
+export default async function Home() {
+  return (
+    <>
+      <Search />
+      <Layout
+        airpup={<Air />}
+        sunr={<Sun />}
+        wind={<Wind />}
+        HourForecast={<HourForecast />}
+        Ux={<Ux />}
+        Precipitation={<Precipitation />}
+        FiveDayForecast={<FiveDayForecast />}
+        FeelsLike={<Feelslike />}
+        Humidity={<Humidity />}
+        Pressure={<Pressure />}
+        Visibility={<Visibility />}
+        Others={<Others />}
+      />
+    </>
+  )
 }
-
-export default Page

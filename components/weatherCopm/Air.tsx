@@ -64,7 +64,6 @@ const Air: FC<AirProps> = ({}) => {
         aria-label="Air pollution"
         max={100}
       />
-
       <p>
         {data?.data.list[0].main.aqi < 50
           ? "Air quality is good."
