@@ -5,7 +5,6 @@ import axios from "axios"
 
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
-import { Skeleton } from "../ui/skeleton"
 import { SkeletonCard } from "../ui/cardSkel"
 
 const Current = ({}) => {

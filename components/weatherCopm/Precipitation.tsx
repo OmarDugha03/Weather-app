@@ -92,7 +92,7 @@ const Precipitation = ({}) => {
             </svg>
             <span>Precipitation</span>
           </p>
-          <div>
+          <div className="lg:mt-16">
             {data?.data.list.map((i) => i.rain?.["3h"]) || 0} mm <br />
             in the last 3h
           </div>

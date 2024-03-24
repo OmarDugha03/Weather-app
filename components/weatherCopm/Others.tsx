@@ -1,21 +1,14 @@
 "use client"
-
 import { useQueryClient } from "@tanstack/react-query"
 import { others } from "../../lib/default"
 import Link from "next/link"
-import { FC } from "react"
-import { useRouter } from "next/navigation"
-
-interface OthersProps {}
-
-const Others: FC<OthersProps> = ({}) => {
-  const { refresh } = useRouter()
+const Others = ({}) => {
   const queryClient = useQueryClient()
   function handleIn() {
-    queryClient.invalidateQueries({ queryKey: ["air", "weather"] })
+    queryClient.invalidateQueries()
   }
   return (
-    <div className="relative order-last hidden h-[25rem] w-full flex-col justify-between lg:block">
+    <div className="relative order-last  h-[25rem] w-full flex-col justify-between ">
       <h3 className="py-3 font-semibold">Other large cities</h3>
       <div className="flex flex-col space-y-3.5" onClick={handleIn}>
         {others.map((item) => (
