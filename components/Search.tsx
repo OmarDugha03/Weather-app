@@ -26,25 +26,11 @@ import {
 } from "@/components/ui/command"
 
 import { Input } from "@/components/ui/input"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import { DEFAULT_SUGGESTIONS } from "@/lib/default"
 
 interface SearchProps {}
-const formSchema = z.object({
-  country: z.string().min(2).max(50),
-})
 
 const Search: FC<SearchProps> = ({}) => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      country: "",
-    },
-  })
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-  }
   return (
     <section className="w-full mt-4 px-3 md:container ">
       {/* Trigger */}
@@ -60,7 +46,7 @@ const Search: FC<SearchProps> = ({}) => {
         </DialogTrigger>
         <DialogContent className="w-[90%] md:w-full">
           <DialogHeader>
-            <DialogTitle>Search for any country !</DialogTitle>
+            <DialogTitle className="py-4">Search for any country !</DialogTitle>
             <DialogDescription>
               {/* Main Functionality  */}
               <Command className="">
@@ -68,9 +54,11 @@ const Search: FC<SearchProps> = ({}) => {
                 <CommandList>
                   <CommandEmpty>No results found.</CommandEmpty>
                   <CommandGroup heading="Suggestions">
-                    <CommandItem>Calendar</CommandItem>
-                    <CommandItem>Search Emoji</CommandItem>
-                    <CommandItem>Calculator</CommandItem>
+                    {DEFAULT_SUGGESTIONS.map((i) => (
+                      <CommandItem key={i.description}>
+                        {i.description}
+                      </CommandItem>
+                    ))}
                   </CommandGroup>
                 </CommandList>
               </Command>
@@ -83,27 +71,4 @@ const Search: FC<SearchProps> = ({}) => {
 }
 
 export default Search
-/*   <Form {...form}>
-                <form
-                  onSubmit={form.handleSubmit(onSubmit)}
-                  className="flex flex-col  space-y-2 w-full justify-between  gap-x-3">
-                  <FormField
-                    control={form.control}
-                    name="country"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Input
-                            placeholder="Country name "
-                            className="w-full"
-                            {...field}
-                          />
-                        </FormControl>
-
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit">Submit</Button>
-                </form>
-              </Form> */
+/*  */

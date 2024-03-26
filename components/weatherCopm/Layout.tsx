@@ -15,6 +15,7 @@ interface LayoutProps {
   Humidity: ReactNode
   Pressure: ReactNode
   Visibility: ReactNode
+  Map: ReactNode
   Others: ReactNode
 }
 const Layout = ({
@@ -30,6 +31,7 @@ const Layout = ({
   Humidity,
   Pressure,
   Visibility,
+  Map,
   Others,
 }: LayoutProps) => {
   return (
@@ -49,8 +51,8 @@ const Layout = ({
       <Card className=" p-4">{Visibility}</Card>
       <Card className=" p-4">{Pressure}</Card>
 
-      <Card className="lg:col-span-3 lg:row-span-2 p-4">{}</Card>
-      <div className="lg:row-span-2 p-4">{Others}</div>
+      <Card className="lg:col-span-3 lg:row-span-2 w-full h-full ">{Map}</Card>
+      <div className="lg:row-span-2 p-4 ">{Others}</div>
     </div>
   )
 }

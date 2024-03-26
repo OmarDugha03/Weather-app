@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App
 
-## Getting Started
+Welcome to MyWeather, your go-to app for accurate and comprehensive weather updates. Developed with passion by Omar Dugha, MyWeather offers a range of features to keep you informed about the weather conditions in your area.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Current Weather:** Get real-time updates on the current weather conditions.
+- **Daily Forecast:** Plan your day with detailed forecasts for the upcoming days.
+- **Wind:** Stay informed about wind speed and direction.
+- **Air Quality:** Monitor the air quality index to protect your health.
+- **UV Index:** Be aware of UV radiation levels for sun safety.
+- **Pressure:** Keep track of atmospheric pressure changes.
+- **Humidity:** Stay comfortable with humidity level information.
+- **Sunset & Sunrise:** Plan your activities around sunset and sunrise times.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Visit the app from [here](https://weather-app-eight-iota-24.vercel.app/)
+- Search For your city !!.
+  And that is it.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Screenshots
 
-## Learn More
+![Screenshot 1](/path/to/screenshot1.png)
+![Screenshot 2](/path/to/screenshot2.png)
 
-To learn more about Next.js, take a look at the following resources:
+## Feedback
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I'm committed to improving MyWeather. If you have any feedback, suggestions, or bug reports, feel free to [contact me](https://www.linkedin.com/in/omar-dugha-5495222aa).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the [MIT License](LICENSE).

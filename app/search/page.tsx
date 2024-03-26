@@ -13,6 +13,7 @@ import {
   Wind,
   Others,
   Current,
+  Map,
 } from "@/components/weatherCopm"
 import Sun from "@/components/weatherCopm/Sun"
 
@@ -36,6 +37,7 @@ export default async function Home() {
         Pressure={<Pressure />}
         Visibility={<Visibility />}
         Others={<Others />}
+        Map={<Map />}
       />
     </>
   )
