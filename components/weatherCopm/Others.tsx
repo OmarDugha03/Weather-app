@@ -11,8 +11,8 @@ const Others = ({}) => {
   const queryClient = useQueryClient()
   const router = useRouter()
   function handleIn() {
-    router.push(`/search?lat=${lat}&lon=${lon}`)
     queryClient.invalidateQueries()
+    router.push(`/search?lat=${lat}&lon=${lon}`)
   }
   return (
     <div className="relative order-last  h-[25rem] w-full flex-col justify-between ">

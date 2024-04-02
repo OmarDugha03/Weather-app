@@ -3,7 +3,7 @@ import { FiveDayForecast } from "@/types/weather"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import Image from "next/image"
-import { FC } from "react"
+import { FC, useState } from "react"
 import { v4 as uuidv4 } from "uuid"
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel"
 import { formattedDay } from "@/lib/DateUtils"
@@ -13,6 +13,7 @@ import { useSearchParams } from "next/navigation"
 interface FiveDayForecastProps {}
 
 const FiveDayForecast: FC<FiveDayForecastProps> = ({}) => {
+  const [five, setFive] = useState<FiveDayForecast[]>()
   const searchParams = useSearchParams()
   const lat = searchParams.get("lat") || 33.5132192
   const lon = searchParams.get("lon") || 36.2768193
